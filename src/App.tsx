@@ -1,10 +1,13 @@
+import { Editor } from "./components/Editor";
 import "./styles.css";
 
 export default function App() {
 	return (
-		<div className="App">
-			<h1>Hello CodeSandbox</h1>
-			<h2>Start editing to see some magic happen!</h2>
+		<div className="app">
+			<h1>Databutton Playground</h1>
+			<div className="editor">
+				<Editor />
+			</div>
 		</div>
 	);
 }
