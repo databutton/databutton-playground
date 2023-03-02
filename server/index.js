@@ -8,6 +8,7 @@ const API_KEY = "";
 const configuration = new Configuration({
 	apiKey: API_KEY,
 });
+
 const openai = new OpenAIApi(configuration);
 
 const app = new Koa();
@@ -16,9 +17,9 @@ app.use(cors());
 app.use(async (ctx) => {
 	console.log(`q=${ctx.query.q}`);
 	const completion = await openai.createCompletion({
-		model: "code-davinci-002",
+		model: "gpt-3.5-turbo",
 		prompt: ctx.query.q,
-		max_tokens: 256,
+		max_tokens: 512,
 		temperature: 0,
 		top_p: 1,
 		frequency_penalty: 0,
